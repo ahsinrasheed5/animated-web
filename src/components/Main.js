@@ -1,4 +1,4 @@
-import React,{useRef,useEffect} from 'react';
+import React from 'react';
 import useWebAnimations  from "@wellyshen/use-web-animations";
 
 export const Main = () => {
@@ -43,8 +43,7 @@ export const Main = () => {
             iterations: Infinity
         }
     });
-      const bg = useRef();
-    var redQueen_alice = useWebAnimations({bg,
+    var redQueen_alice = useWebAnimations({
         keyframes:[
             { transform: 'translateY(0)' },
 	      { transform: 'translateY(-100%)' } 
@@ -67,7 +66,6 @@ export const Main = () => {
         redQueen_alice.getAnimation().updatePlaybackRate(redQueen_alice.getAnimation().playbackRate*1.15);
       }
     
-      useEffect(()=>{
         setInterval(()=>{
           if(redQueen_alice.getAnimation().playbackRate > 1)
           {
@@ -78,10 +76,7 @@ export const Main = () => {
             redQueen_alice.getAnimation().updatePlaybackRate(redQueen_alice.getAnimation().playbackRate*0.9);
           }
         },2000)
-      },[])
-
-    
-      
+  
         document.addEventListener("click", goFaster);
 
     return (
