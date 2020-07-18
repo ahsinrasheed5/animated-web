@@ -43,4 +43,4 @@ jobs:
     
     # Deploy Surge
     - name: Deploy basic React App 
-      run: surge ./build project-4(a)-bootcamp2020.surge.sh --token ${{ secrets.SURGE_TOKEN_7}}
+      run: surge ./build project-4a-bootcamp2020.surge.sh --token ${{ secrets.SURGE_TOKEN_7}}
